@@ -30,7 +30,7 @@ namespace Lesson1
             }
             set
             {
-                this.accountNumber = value;
+                this.accountNumber++;
             }
         }
 
@@ -54,6 +54,10 @@ namespace Lesson1
             }
         }
 
+        public int GetBalance()
+        {
+            return this.balance;
+        }
 
     }
 
