@@ -59,12 +59,29 @@ namespace Lesson1
             }
         }
         
+        public void PushToAcc(int money)
+        {
+            balance += money;
+        }
+        public void TakeFromAcc(int money)
+        {
+            if (balance >= 0 && balance >= money)
+            {
+                balance -= money;
+            }
+            else
+            {
+                Console.WriteLine("Недостаточно средств для снятия");
+                Console.WriteLine();
+            }
+        }
         public void PrintAccount()
         {
             Console.WriteLine("Информация о счёте:");
             Console.WriteLine($"Id: {accountNumber}");
             Console.WriteLine($"Баланс: {balance}");
             Console.WriteLine($"Тип аккаунта: {accountType}");
+            Console.WriteLine();
         }
     }
 
