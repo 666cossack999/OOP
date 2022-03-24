@@ -19,52 +19,46 @@ namespace Lesson1
 
     class Account
     {
-        private int accountNumber;
-        private int balance;
-        private accountType accountType;
+        private static int _accountNumber;
+        private static int _balance;
+        private static accountType _accountType;
 
-        public int AccountNumber
+        public void SetAccountNumber(int id)
         {
-            get
-            {
-                return this.accountNumber;
-            }
-            set
-            {
-                this.accountNumber++;
-            }
+            _accountNumber = id;
         }
 
-        public int Balance
+        public int GetAccountNumber()
         {
-            get
-            {
-                return this.balance;
-            }
-            set
-            {
-                this.balance = value;
-            }
+            return _accountNumber;
         }
 
-        public accountType AccountType
+        public void SetBalance(int balance)
         {
-            get
-            {
-                return this.accountType;
-            }
-            set
-            {
-                this.accountType = value;
-            }
+            _balance = balance;
         }
-        
+
+        public int GetBalance()
+        {
+            return _balance;
+        }
+
+        public void SetType(accountType type)
+        {
+            _accountType = type;
+        }
+
+        public accountType GetType()
+        {
+            return _accountType;
+        }
+
         public void PrintAccount()
         {
             Console.WriteLine("Информация о счёте:");
-            Console.WriteLine($"Id: {accountNumber}");
-            Console.WriteLine($"Баланс: {balance}");
-            Console.WriteLine($"Тип аккаунта: {accountType}");
+            Console.WriteLine($"Id: {_accountNumber}");
+            Console.WriteLine($"Баланс: {_balance}");
+            Console.WriteLine($"Тип аккаунта: {_accountType}");
         }
     }
 
