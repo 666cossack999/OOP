@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Lesson1
 {
-    enum accountType
+    enum accountType : byte
     {
+        Unknown,
         Budget,
         ForeignСurrency,
         Frozen,
@@ -19,59 +20,38 @@ namespace Lesson1
 
     class Account
     {
-        private static int id = 1;
+        private static int id;
         private int _accountNumber;
         private int _balance;
         private accountType _accountType;
 
-        public int AccountNumber
+
+        public Account(int _balance) : this(_balance, accountType.Unknown)
         {
-            get
-            {
-                return _accountNumber;
-            }
-            set
-            {
-                this._accountNumber = value;
-            }
         }
 
-        public int Balance
+        public Account(accountType _accountType) : this(0,_accountType)
         {
-            get
-            {
-                return this._balance;
-            }
-            set
-            {
-                this._balance = value;
-            }
         }
 
-        public accountType AccountType
+        public Account(int _balance, accountType _accountType)
         {
-            get
-            {
-                return this._accountType;
-            }
-            set
-            {
-                this._accountType = value;
-            }
+            _accountNumber = SetId();
+            this._balance = _balance;
+            this._accountType = _accountType;
         }
-
         public int SetId()
         {
             _accountNumber = id++;
             return _accountNumber;
         }
-
         public void PrintAccount()
         {
             Console.WriteLine("Информация о счёте:");
             Console.WriteLine($"Id: {_accountNumber}");
             Console.WriteLine($"Баланс: {_balance}");
             Console.WriteLine($"Тип аккаунта: {_accountType}");
+            Console.WriteLine("===================================");
         }
     }
 
