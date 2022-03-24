@@ -10,6 +10,14 @@ namespace Lesson1
     {
         static void Main(string[] args)
         {
+            var account = new Account();
+            account.AccountNumber = 1;
+            account.Balance = 1000;
+            account.AccountType = accountType.Budget;
+
+            account.PrintAccount();
+
+            Console.ReadLine();
         }
     }
 }

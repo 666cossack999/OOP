@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace Lesson1
 {
+    enum accountType
+    {
+        Budget,
+        ForeignСurrency,
+        Frozen,
+        Insured,
+        Checking,
+        Correspondent,
+        Savings
+    }
+
     class Account
     {
         private int accountNumber;
         private int balance;
-
-        private enum accountType
-        {
-            Budget,
-            ForeignСurrency,
-            Frozen,
-            Insured,
-            Checking,
-            Correspondent,
-            Savings
-        }
+        private accountType accountType;
 
         public int AccountNumber
         {
@@ -46,19 +47,25 @@ namespace Lesson1
             }
         }
 
-        public int AccountType
+        public accountType AccountType
         {
             get
             {
-                return this.AccountType;
+                return this.accountType;
+            }
+            set
+            {
+                this.accountType = value;
             }
         }
-
-        public int GetBalance()
+        
+        public void PrintAccount()
         {
-            return this.balance;
+            Console.WriteLine("Информация о счёте:");
+            Console.WriteLine($"Id: {accountNumber}");
+            Console.WriteLine($"Баланс: {balance}");
+            Console.WriteLine($"Тип аккаунта: {accountType}");
         }
-
     }
 
     
