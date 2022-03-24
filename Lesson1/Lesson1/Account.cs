@@ -8,6 +8,7 @@ namespace Lesson1
 {
     enum accountType
     {
+        Unknown,
         Budget,
         ForeignСurrency,
         Frozen,
@@ -19,55 +20,42 @@ namespace Lesson1
 
     class Account
     {
-        private int accountNumber;
-        private int balance;
-        private accountType accountType;
+        private static int id;
+        private int _accountNumber;
+        private int _balance;
+        private accountType _accountType;
 
-        public int AccountNumber
+        public Account(int _balance) : this(_balance, accountType.Unknown)
         {
-            get
-            {
-                return this.accountNumber;
-            }
-            set
-            {
-                this.accountNumber++;
-            }
         }
 
-        public int Balance
+        public Account(accountType _accountType) : this(0, _accountType)
         {
-            get
-            {
-                return this.balance;
-            }
-            set
-            {
-                this.balance = value;
-            }
         }
 
-        public accountType AccountType
+        public Account(int _balance, accountType _accountType)
         {
-            get
-            {
-                return this.accountType;
-            }
-            set
-            {
-                this.accountType = value;
-            }
+            _accountNumber = SetId();
+            this._balance = _balance;
+            this._accountType = _accountType;
         }
-        
+       
+        public int SetId()
+        {
+            _accountNumber = id++;
+            return _accountNumber;
+        }
+
         public void PushToAcc(int money)
         {
-            balance += money;
+            _balance += money;
         }
+       
         public void TakeFromAcc(int money)
         {
-            if (balance >= 0 && balance >= money)
+            if (_balance >= 0 && _balance >= money)
             {
-                balance -= money;
+                _balance -= money;
             }
             else
             {
@@ -75,12 +63,13 @@ namespace Lesson1
                 Console.WriteLine();
             }
         }
+        
         public void PrintAccount()
         {
             Console.WriteLine("Информация о счёте:");
-            Console.WriteLine($"Id: {accountNumber}");
-            Console.WriteLine($"Баланс: {balance}");
-            Console.WriteLine($"Тип аккаунта: {accountType}");
+            Console.WriteLine($"Id: {_accountNumber}");
+            Console.WriteLine($"Баланс: {_balance}");
+            Console.WriteLine($"Тип аккаунта: {_accountType}");
             Console.WriteLine();
         }
     }

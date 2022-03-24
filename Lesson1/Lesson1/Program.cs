@@ -10,26 +10,17 @@ namespace Lesson1
     {
         static void Main(string[] args)
         {
-            //Создаём объект
-            var account = new Account();
-            account.AccountNumber = 1;
-            account.Balance = 1000;
-            account.AccountType = accountType.Budget;
+            //Создаём объекты
+            var account = new Account(1000);
+            var account2 = new Account(3000, accountType.Budget);
+            var account3 = new Account(accountType.Savings);
 
-            //Печатаем инфо
-            account.PrintAccount();
 
-            //Кладём деньги на счёт
-            account.PushToAcc(3500);
-
-            //Печатаем инфо
-            account.PrintAccount();
-
-            //Снимаем со счёта
-            account.TakeFromAcc(5000);
 
             //Выводим инфо
             account.PrintAccount();
+            account2.PrintAccount();
+            account3.PrintAccount();
 
             Console.ReadLine();
         }
