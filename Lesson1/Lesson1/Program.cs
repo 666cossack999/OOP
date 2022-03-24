@@ -22,6 +22,12 @@ namespace Lesson1
             account2.PrintAccount();
             account3.PrintAccount();
 
+            //переводим средства со счёта account2 на счёт account
+            account.CashTransfer(account2, 1500);
+
+            account.PrintAccount();
+            account2.PrintAccount();
+
             Console.ReadLine();
         }
     }

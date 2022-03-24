@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Lesson1
 {
+    /// <summary>
+    /// Тип счёта
+    /// </summary>
     enum accountType
     {
         Unknown,
@@ -40,17 +43,29 @@ namespace Lesson1
             this._accountType = _accountType;
         }
        
+        /// <summary>
+        /// Создаёт уникальный ID
+        /// </summary>
+        /// <returns></returns>
         public int SetId()
         {
             _accountNumber = id++;
             return _accountNumber;
         }
-
+       
+        /// <summary>
+        /// Положить деньги на счёт
+        /// </summary>
+        /// <param name="money">Сумма</param>
         public void PushToAcc(int money)
         {
             _balance += money;
         }
-       
+        
+        /// <summary>
+        /// Снять деньги со счёта
+        /// </summary>
+        /// <param name="money"></param>
         public void TakeFromAcc(int money)
         {
             if (_balance >= 0 && _balance >= money)
@@ -64,6 +79,9 @@ namespace Lesson1
             }
         }
         
+        /// <summary>
+        /// Вывести инфо о счёте
+        /// </summary>
         public void PrintAccount()
         {
             Console.WriteLine("Информация о счёте:");
@@ -71,6 +89,23 @@ namespace Lesson1
             Console.WriteLine($"Баланс: {_balance}");
             Console.WriteLine($"Тип аккаунта: {_accountType}");
             Console.WriteLine();
+        }
+
+        /// <summary>
+        /// Переводит сумму с одного счёта на другой
+        /// </summary>
+        /// <param name="account">С какого счёта списать</param>
+        /// <param name="cash">сумма</param>
+        public void CashTransfer(Account account, int cash)
+        {
+            if (account._balance >= 0 && account._balance >= cash)
+            {
+                account._balance -= cash;
+                this._balance += cash;
+            } else
+            {
+                Console.WriteLine("Недостаточно средств для перевода");
+            }
         }
     }
 
