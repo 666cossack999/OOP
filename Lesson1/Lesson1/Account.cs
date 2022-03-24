@@ -19,19 +19,20 @@ namespace Lesson1
 
     class Account
     {
-        private int accountNumber;
-        private int balance;
-        private accountType accountType;
+        private static int id = 1;
+        private int _accountNumber;
+        private int _balance;
+        private accountType _accountType;
 
         public int AccountNumber
         {
             get
             {
-                return this.accountNumber;
+                return _accountNumber;
             }
             set
             {
-                this.accountNumber++;
+                this._accountNumber = value;
             }
         }
 
@@ -39,11 +40,11 @@ namespace Lesson1
         {
             get
             {
-                return this.balance;
+                return this._balance;
             }
             set
             {
-                this.balance = value;
+                this._balance = value;
             }
         }
 
@@ -51,20 +52,26 @@ namespace Lesson1
         {
             get
             {
-                return this.accountType;
+                return this._accountType;
             }
             set
             {
-                this.accountType = value;
+                this._accountType = value;
             }
         }
-        
+
+        public int SetId()
+        {
+            _accountNumber = id++;
+            return _accountNumber;
+        }
+
         public void PrintAccount()
         {
             Console.WriteLine("Информация о счёте:");
-            Console.WriteLine($"Id: {accountNumber}");
-            Console.WriteLine($"Баланс: {balance}");
-            Console.WriteLine($"Тип аккаунта: {accountType}");
+            Console.WriteLine($"Id: {_accountNumber}");
+            Console.WriteLine($"Баланс: {_balance}");
+            Console.WriteLine($"Тип аккаунта: {_accountType}");
         }
     }
 
