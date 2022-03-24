@@ -107,6 +107,8 @@ namespace Lesson1
                 Console.WriteLine("Недостаточно средств для перевода");
             }
         }
+
+        
     }
 
     
