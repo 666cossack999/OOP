@@ -10,19 +10,15 @@ namespace Lesson1
     {
         static void Main(string[] args)
         {
-            var account = new Account();
-            account.Balance = 1000;
-            account.AccountType = accountType.Budget;
-            account.AccountNumber = account.SetId();
-
-            var account2 = new Account();
-            account2.Balance = 3000;
-            account2.AccountType = accountType.Frozen;
-            account2.SetId();
+            var account = new Account(1000);
+            var account2 = new Account(3000, accountType.Budget);
+            var account3 = new Account(accountType.Savings);
+            
 
 
             account.PrintAccount();
             account2.PrintAccount();
+            account3.PrintAccount();
 
             Console.ReadLine();
         }
