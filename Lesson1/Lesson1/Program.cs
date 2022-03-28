@@ -8,30 +8,46 @@ namespace Lesson1
 {
     class Program
     {
+        /// <summary>
+        /// Выводит строку задом-наперёд
+        /// </summary>
+        /// <param name="str">строка</param>
+        /// <returns>перевёрнутая строка</returns>
+        static string StringRevers(string str)
+        {
+            return new string(str.Reverse().ToArray());
+        }
+
         static void Main(string[] args)
         {
-            //Создаём объект
-            var account = new Account();
-            account.AccountNumber = 1;
-            account.Balance = 1000;
-            account.AccountType = accountType.Budget;
+            
 
-            //Печатаем инфо
-            account.PrintAccount();
+            //Создаём объекты
+            var account = new Account(1000);
+            var account2 = new Account(3000, accountType.Budget);
+            var account3 = new Account(accountType.Savings);
 
-            //Кладём деньги на счёт
-            account.PushToAcc(3500);
 
-            //Печатаем инфо
-            account.PrintAccount();
-
-            //Снимаем со счёта
-            account.TakeFromAcc(5000);
 
             //Выводим инфо
             account.PrintAccount();
+            account2.PrintAccount();
+            account3.PrintAccount();
+
+            //переводим средства со счёта account2 на счёт account
+            account.CashTransfer(account2, 1500);
+
+            account.PrintAccount();
+            account2.PrintAccount();
+
+            //переворачиваем строку
+            string myStr = StringRevers("Улыбок тебе дед Макар");
+
+            Console.WriteLine(myStr);
 
             Console.ReadLine();
         }
+
+        
     }
 }
