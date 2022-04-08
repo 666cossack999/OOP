@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные с этой сборкой.
-[assembly: AssemblyTitle("Lesson2.1_Mansion")]
+[assembly: AssemblyTitle("Lesson3.1_Mansion")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Lesson2.1_Mansion")]
+[assembly: AssemblyProduct("Lesson3.1_Mansion")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID представляет идентификатор typelib, если этот проект доступен из модели COM
-[assembly: Guid("1f042862-0898-4daa-9563-a90099184d44")]
+[assembly: Guid("cb38af36-b83c-44f1-860c-ac04e893f0ff")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

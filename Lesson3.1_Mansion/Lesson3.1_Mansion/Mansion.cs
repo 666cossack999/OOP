@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lesson2._1_Mansion
+namespace Lesson3._1_Mansion
 {
     class Mansion
     {
@@ -22,11 +22,11 @@ namespace Lesson2._1_Mansion
         {
         }
 
-        public Mansion(int height, int storeys) : this(height, storeys,0)
+        public Mansion(int height, int storeys) : this(height, storeys, 0)
         {
         }
 
-        public Mansion(int height, int storeys, int apartments) : this(height, storeys, apartments,0)
+        public Mansion(int height, int storeys, int apartments) : this(height, storeys, apartments, 0)
         {
         }
 

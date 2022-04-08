@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1F042862-0898-4DAA-9563-A90099184D44}</ProjectGuid>
+    <ProjectGuid>{CB38AF36-B83C-44F1-860C-AC04E893F0FF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Lesson2._1_Mansion</RootNamespace>
-    <AssemblyName>Lesson2.1_Mansion</AssemblyName>
+    <RootNamespace>Lesson3._1_Mansion</RootNamespace>
+    <AssemblyName>Lesson3.1_Mansion</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,10 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Mansion.cs" />
-=======
->>>>>>> Lesson3.1
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
