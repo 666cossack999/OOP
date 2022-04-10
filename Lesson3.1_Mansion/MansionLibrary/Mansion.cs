@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Lesson3._1_Mansion
+namespace MansionLibrary
 {
-    class Mansion
+    public class Mansion
     {
         private static int id;
         private int _mansionNumber; //номер здания
@@ -36,14 +32,14 @@ namespace Lesson3._1_Mansion
             _apartments = apartments;
             _entrances = entrances;
         }
-       
+
         public void SetHeight(int height) { _height = height; }
 
-        public void SetStoreys (int storeys) { _storeys = storeys; }
+        public void SetStoreys(int storeys) { _storeys = storeys; }
 
-        public void SetApartmens (int apartmens) { _apartments = apartmens; }
-        
-        public void SetEntrances (int entrances) { _entrances = entrances; }
+        public void SetApartmens(int apartmens) { _apartments = apartmens; }
+
+        public void SetEntrances(int entrances) { _entrances = entrances; }
 
         public void PrintId() { Console.WriteLine($"Номер дома: {_mansionNumber}"); }
 
