@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
-namespace Lesson3._1_Mansion
+namespace MansionLibrary
 {
-    static class Creator
+    public static class Creator
     {
         public static Hashtable ht = new Hashtable();
 

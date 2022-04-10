@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Lesson3._1_Mansion
+namespace MansionLibrary
 {
-    class Mansion
+    public class Mansion
     {
         private static int id;
         private int _mansionNumber; //номер здания
