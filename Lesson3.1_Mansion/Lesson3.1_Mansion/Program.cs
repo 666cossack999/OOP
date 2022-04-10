@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,21 +11,58 @@ namespace Lesson3._1_Mansion
     {
         static void Main(string[] args)
         {
-            Mansion mansion_1 = new Mansion(600, 2, 8, 1);    //Создаём дом высота 6м, 2 этажа, 8 квартир, 1 подъезд
-            Mansion mansion_2 = new Mansion(800, 4, 16, 4);   //Создаём дом высота 6м, 2 этажа, 16 квартир, 2 подъезда
+            //Создаём дома
+            Creator.CreateBuild(1000, 2, 4, 2);
+            Creator.CreateBuild(600, 5, 2, 3);
+            Creator.CreateBuild(1500, 5, 2, 3);
+            Creator.CreateBuild(2000, 4, 2, 3);
+            Creator.CreateBuild(3000, 4, 2, 4);
+            Creator.CreateBuild(4000, 4, 2, 5);
+            Creator.CreateBuild(5000, 4, 6, 2);
+            Creator.CreateBuild(6000, 4, 7, 2);
+            Creator.CreateBuild(7000, 4, 8, 2);
+            Creator.CreateBuild(8000, 4, 9, 2);
+            Creator.CreateBuild(9000, 10, 2, 2);
 
-            mansion_1.PrintMansion();
-            mansion_2.PrintMansion();
 
-            Console.WriteLine($"Высота этажей в доме №{mansion_1.GetId()}: {mansion_1.GetStoreysHeight()} см, " +
-                $"Кол-во квартир на этаже: {mansion_1.GetApartmentsInStoreys()}, Кол-во квартир в подъезде {mansion_1.GetApartmentsInEntrances()}");
+            Creator.ht.Remove(3);
+            Creator.ht.Remove(6);
+            Creator.ht.Remove(7);
 
-            Console.WriteLine();
+            //получаем коллекцию ключей из хэш-таблицы
+            ICollection keys = Creator.ht.Keys;
+            
 
-            Console.WriteLine($"Высота этажей в доме №{mansion_2.GetId()}: {mansion_2.GetStoreysHeight()} см, " +
-                $"Кол-во квартир на этаже: {mansion_2.GetApartmentsInStoreys()}, Кол-во квартир в подъезде {mansion_2.GetApartmentsInEntrances()}");
+            //создаём массив объектов
+            var builds = new Mansion[keys.Count];
+            //заполняем массив нашими домами, выводим инфо о домах на консоль            
+
+            
+            for (int i = 0, j = 1; i < keys.Count; i++)
+            {
+                
+                if (Creator.ht[i+j] != null)
+                {
+                    builds[i] = (Mansion)Creator.ht[i + j];
+                    builds[i].PrintMansion();
+                }
+                else
+                {
+                    while (Creator.ht[i + j] == null)
+                    {
+                        j++;
+                    }
+                    builds[i] = (Mansion)Creator.ht[i + j];
+                    builds[i].PrintMansion();
+                }
+                
+            }
+           
+            Console.WriteLine($"Высота этажа дома №{builds[1].GetId()}: {builds[1].GetStoreysHeight()}");
+            Console.WriteLine($"Высота этажа дома №{builds[3].GetId()}: {builds[3].GetStoreysHeight()}");
 
             Console.ReadLine();
+            
 
         }
     }
